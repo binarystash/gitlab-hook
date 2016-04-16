@@ -24,49 +24,48 @@ If you're using Windows: use Putty
 1. Copy and paste the **gitlab-hook** folder to your project. It must be in the same folder with .git, otherwise the script would fail.
 
 2. Commit the changes.
-```
-git add .
-git commit -m 'Added hook script'
-```
+  ```
+  git add .
+  git commit -m 'Added hook script'
+  ```
 
 3. Push it to gitlab. Replace `<origin>` with the remote name and `<branch>` with the branch you must push it to (i.e. master).
-
-```
-git push <origin> <branch>
-```
+  ```
+  git push <origin> <branch>
+  ```
 
 ### Set up production server
 
 1. SSH to the server as root.
 
 2. Install Git and PHP if they are not yet installed.
-```
-apt-get install git php5 libapache2-mod-php5 php5-mcrypt
-```
+  ```
+  apt-get install git php5 libapache2-mod-php5 php5-mcrypt
+  ```
 
 3. Go to your webroot. Make sure that this directory is empty, otherwise, Git will fail.
-```
-cd /var/www/html
-```
+  ```
+  cd /var/www/html
+  ```
 
 6. Clone your gitlab.com project to the server.
-```
-git clone git@gitlab.com:<project_group>/<project_name> /var/www/html/
-```
+  ```
+  git clone git@gitlab.com:<project_group>/<project_name> /var/www/html/
+  ```
 
 6. Make `gitlab-hook/json` writable by www-data. 
-```
-chown -R www-data:www-data /var/www/html/gitlab-hook/json
-```
+  ```
+  chown -R www-data:www-data /var/www/html/gitlab-hook/json
+  ```
 
 ### Set up webhook
 
 1. On your project's sidebar on Gitlab.com, go to **Settings->Webhooks**.
 
 2. Input the URL. If your site is http://www.mywebsite.com, then the URL should be:
-```
-http://www.mywebsite.com/gitlab-hook/trigger.php?action=update
-```
+  ```
+  http://www.mywebsite.com/gitlab-hook/trigger.php?action=update
+  ```
 
 3. If the sync must only happen when a tag is created, uncheck all triggers and check **Tag push events**.
 
@@ -79,9 +78,9 @@ http://www.mywebsite.com/gitlab-hook/trigger.php?action=update
 2. Type `crontab -e`
 
 3. Add the following to sync your repo every minute.
-```
-* * * * * /usr/bin/php /var/www/html/gitlab-hook/trigger.php pull
-```
+  ```
+  * * * * * /usr/bin/php /var/www/html/gitlab-hook/trigger.php pull
+  ```
 
 4. CONGRATULATIONS! Every time you push a tag, your repo and production server should sync.
 
