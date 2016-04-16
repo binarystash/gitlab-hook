@@ -4,7 +4,7 @@
 
 A [webhook](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md) is a facility that allows a URL to be triggered for specific Gitlab actions. For instance, code can be deployed to a production server whenever pushing code or tagging a branch is done. 
 
-For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14.04 on Digital Ocean. A Gitlab.com project was used. 
+For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14.04 on Digital Ocean. A [Gitlab.com](http://gitlab.com) project was used. It may not work on Gitlab Community and Enterprise editions.
 
 ### Prerequisites
 * An existing Gitlab.com project
@@ -14,8 +14,8 @@ For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14
 
 1. SSH to the server as root. If you log in as another user, you may eventually encounter permission errors.
 
-If you're using Linux: type `ssh <ip_address_of_your_server>`
-If you're using Windows: use Putty
+  * If you're using Linux: type `ssh <ip_address_of_your_server>`
+  * If you're using Windows: use [Putty](https://www.digitalocean.com/community/tutorials/how-to-log-into-a-vps-with-putty-windows-users)
 
 2. Find or generate your server's [SSH key](http://doc.gitlab.com/ce/ssh/README.html). This will be used to provide your server read-only access to the repository.
 
