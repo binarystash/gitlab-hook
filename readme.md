@@ -82,5 +82,5 @@ If you're using Windows: use Putty
   * * * * * /usr/bin/php /var/www/html/gitlab-hook/trigger.php pull
   ```
 
-4. CONGRATULATIONS! Every time you push a tag, your repo and production server should sync.
+4. **CONGRATULATIONS!** Every time you push a tag, your repo and production server should sync.
 
