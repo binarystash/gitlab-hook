@@ -19,7 +19,7 @@ For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14
 
 2. Find or generate your server's [SSH key](http://doc.gitlab.com/ce/ssh/README.html). This will be used to provide your server read-only access to the repository.
 
-3. On the sidebar of your Gitlab.com project, go to **Settings->Deploy Keys**. Add the SSH key from step 1.
+3. On the sidebar of your Gitlab.com project, go to **Settings->Deploy Keys**. Add the SSH key from step 2.
 
 ### Add hook to your project
 
