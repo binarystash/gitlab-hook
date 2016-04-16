@@ -6,7 +6,7 @@ require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'class-gitlab-sync.php
 
 //Get vars
 $action = isset( $_GET['action'] ) ? $_GET['action'] : $argv[1];
-$gs = new GitlabSync();
+$gs = new Gitlab_Sync();
 
 switch ( $action ) {
 	

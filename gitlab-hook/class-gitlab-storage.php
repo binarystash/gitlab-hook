@@ -1,6 +1,6 @@
 <?php
 
-class GitlabStorage {
+class Gitlab_Storage {
 	
 	protected $_data;
 	protected $_filename;
@@ -19,9 +19,20 @@ class GitlabStorage {
 		
 	}
 	
+	private function _update_data() {
+		
+		//Save content to file
+		file_put_contents( $this->_filename, json_encode( $this->_data ) );
+		
+		//Retrieve content from file
+		$data = file_get_contents( $this->_filename );
+		$this->_data = json_decode( $data, true );
+		
+	}
+	
 	function set($option,$value) {
 		$this->_data[$option] = $value;
-		file_put_contents( $this->_filename, json_encode( $this->_data ) );
+		$this->_update_data();
 	}
 	
 	function get($option) {
@@ -31,6 +42,11 @@ class GitlabStorage {
 		else {
 			return null;
 		}
+	}
+	
+	function purge($option) {
+		unset( $this->_data[$option] );
+		$this->_update_data();
 	}
 	
 }

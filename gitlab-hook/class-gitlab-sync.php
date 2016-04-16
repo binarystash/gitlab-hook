@@ -1,12 +1,12 @@
 <?php
 
-class GitlabSync {
+class Gitlab_Sync {
 	
 	protected $_storage;
 	
 	function __construct() {
 		
-		$this->_storage = new GitlabStorage();
+		$this->_storage = new Gitlab_Storage();
 		
 	}
 	
