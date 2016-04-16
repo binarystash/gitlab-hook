@@ -12,7 +12,7 @@ For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14
 
 ### Set up the repository
 
-1. SSH to the server as root. If you log in as another user, you may eventually encounter permission errors.
+1. SSH to the server as root. If you log in as another user, you will get permission errors.
 
   * If you're using Linux: type `ssh <ip_address_of_your_server>`
   * If you're using Windows: use [Putty](https://www.digitalocean.com/community/tutorials/how-to-log-into-a-vps-with-putty-windows-users)
