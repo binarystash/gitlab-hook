@@ -31,7 +31,7 @@ For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14
   git commit -m 'Added hook script'
   ```
 
-3. Push it to gitlab. Replace `<origin>` with the remote name and `<branch>` with the branch you must push it to (i.e. master).
+3. Push it to Gitlab. Replace `<origin>` with the remote repo name and `<branch>` with the branch you must push it to (i.e. master).
   ```
   git push <origin> <branch>
   ```
