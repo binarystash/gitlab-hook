@@ -17,7 +17,7 @@ class Gitlab_Sync {
 		$new_request = file_get_contents("php://input");
 		$new_request = json_decode( $new_request, true );
 		
-		$storage = new GitlabStorage();
+		$storage = new Gitlab_Storage();
 		$storage->set( "last", $storage->get("current") );
 		$storage->set( "current", $new_request['after'] );
 		
@@ -32,7 +32,10 @@ class Gitlab_Sync {
 		
 		if ( $current != $last ) {
 			exec("cd " . dirname(__FILE__) . " && cd .. && git pull");
+			return $current;
 		}
+		
+		return $last;
 		
 	}
 

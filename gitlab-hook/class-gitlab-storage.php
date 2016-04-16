@@ -2,51 +2,63 @@
 
 class Gitlab_Storage {
 	
-	protected $_data;
 	protected $_filename;
 	
 	function __construct() {
 		
 		$this->_filename = dirname(__FILE__). DIRECTORY_SEPARATOR . "/json/gitstorage.json";
 
-		if ( file_exists( $this->_filename ) ) {
-			$data = file_get_contents( $this->_filename );
-			$this->_data = json_decode( $data, true );
-		}
-		else {
+		if ( !file_exists( $this->_filename ) ) {
 			file_put_contents( $this->_filename, "" );
 		}
 		
 	}
 	
-	private function _update_data() {
+	private function _read_from_file() {
 		
-		//Save content to file
-		file_put_contents( $this->_filename, json_encode( $this->_data ) );
-		
-		//Retrieve content from file
-		$data = file_get_contents( $this->_filename );
-		$this->_data = json_decode( $data, true );
+		return json_decode( file_get_contents( $this->_filename ), true );
 		
 	}
 	
+	private function _save_to_file( $array ) {
+		
+		$a = file_put_contents( $this->_filename, json_encode( $array ) );
+
+	}
+
 	function set($option,$value) {
-		$this->_data[$option] = $value;
-		$this->_update_data();
+		
+		$data = $this->_read_from_file();
+		
+		$data[$option] = $value;
+		
+		$this->_save_to_file( $data );
+		
 	}
 	
 	function get($option) {
-		if ( isset( $this->_data[$option] ) ) {
-			return $this->_data[$option];
+		
+		$data = $this->_read_from_file();
+		
+		if ( isset( $data[$option] ) ) {
+			return $data[$option];
 		}
 		else {
 			return null;
 		}
+		
 	}
 	
 	function purge($option) {
-		unset( $this->_data[$option] );
-		$this->_update_data();
+		
+		$data = $this->_read_from_file();
+		
+		if ( isset( $data[$option] ) ) {
+			unset( $data[$option] );
+		}
+		
+		$this->_save_to_file( $data );
+		
 	}
 	
 }
