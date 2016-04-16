@@ -23,5 +23,7 @@ before_script:
    - sudo service apache2 restart
    
 script: 
-  -chmod a+x build.sh
-  -./build.sh
+  - composer install
+  - cd tests
+  - phpunit test-gitlab-storage.php
+  - phpunit test-gitlab-sync.php
