@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/binarystash/gitlab-hook.svg?branch=master)](https://travis-ci.org/binarystash/gitlab-hook)
+
 # Sync Gitlab with your LAMP website
 
 A [webhook](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md) is a facility that allows a URL to be triggered for specific Gitlab actions. For instance, code can be deployed to a production server whenever pushing code or tagging a branch is done. 
