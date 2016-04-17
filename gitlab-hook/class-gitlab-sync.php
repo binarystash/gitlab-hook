@@ -1,4 +1,12 @@
 <?php
+/**
+ * class-gitlab-sync.php
+ * 
+ * This class contains methods for syncing a Gitlab.com repo with a LAMP web server 
+ * @author Binarystash <binarystash01@gmail.com
+ * @version 1.0.0
+ * @license https://opensource.org/licenses/MIT MIT
+ */
 
 class Gitlab_Sync {
 	

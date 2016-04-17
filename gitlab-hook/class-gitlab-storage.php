@@ -1,4 +1,12 @@
 <?php
+/**
+ * class-gitlab-storage.php
+ * 
+ * This class uses a JSON file for data storage/retrieval
+ * @author Binarystash <binarystash01@gmail.com
+ * @version 1.0.0
+ * @license https://opensource.org/licenses/MIT MIT
+ */
 
 class Gitlab_Storage {
 	
