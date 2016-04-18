@@ -6,7 +6,7 @@ A [webhook](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/we
 
 For accuracy's sake, this guide was prepared for a new installation of Ubuntu 14.04 on Digital Ocean. A [Gitlab.com](http://gitlab.com) project was used. It may not work on Gitlab Community and Enterprise editions.
 
-Cron will be used to prevent PHP time issues when fetching large projects.
+Cron will be used to avoid PHP timeout issues when fetching large projects.
 
 ### Prerequisites
 * An existing Gitlab.com project
