@@ -1,9 +1,5 @@
 <?php
 
-$parent_directory = dirname(__FILE__);
-
-require_once($parent_directory."/../gitlab-hook/class-gitlab-storage.php");
-
 class Gitlab_Storage_test extends PHPUnit_Framework_TestCase
 {
    
